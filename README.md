@@ -47,5 +47,5 @@ We would like to express our gratitude to the following projects and their contr
 
 Your contributions to the community have been invaluable.
 
-For more details or to apply for access, please contact us at `xxali1201@gmail.com`.
+For more details or to apply for access, please contact us at `xxali1201@gmail.com`.  
 **Only English is accepted. Please use [Google Translate](https://translate.google.com) if needed.**
