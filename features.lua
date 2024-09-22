@@ -11,10 +11,12 @@ package_name
 -- package_name is string. current package name. 
 
 taskid
--- taskid is integer. current task id.
+-- taskid is integer. current task id.  
+-- each id corresponds to an independent isolated environment.  
+-- /data/local/tmp/$package_name$/env.id
 
 --functions
-dbgview(text);
+dbgview(string);
 set_prop(string, string);
 string = get_prop(string);
 set_path_keep(string);
