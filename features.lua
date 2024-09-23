@@ -43,8 +43,11 @@ reflect_callStaticMethod(javaobj_class, methodname, native_signature, arg0, arg1
 javaobj = reflect_newObject(javaobj_class, native_signature, arg0, arg1, ...);
 javaobj = reflect_newObjectArray(javaobj_class, array_length);
 javaobj = reflect_newByteArray(array_length);
-myloader = reflect_myClassLoader();
+javaobj = reflect_nullObject();
+classloader = reflect_myClassLoader();
 context = reflect_myContext();
+application = reflect_myApplication();
+classloader = reflect_loadDex(buffer, parent);
 reflect_checkObject(javaobj);
 reflect_assertObject(javaobj);
 
@@ -69,3 +72,14 @@ javaobj.fieldname; -- accessing object variables
 javaobj_class.fieldname; -- accessing class static variables
 javaobj.function(); -- invoke static function
 javaobj:function(); -- invoke non-static function
+
+--Functions that must be implemented in the Lua layer for the engine to use.
+function source_path()
+  -- The directory where base.apk is located. base.apk is the original APK file.
+  return "/sdcard/";
+end
+function onCreate()
+  -- Application.onCreate callback
+  
+end  
+  
