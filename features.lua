@@ -10,11 +10,6 @@ We have extended Lua with the following support.
 package_name 
 -- package_name is string. current package name. 
 
-taskid
--- taskid is integer. current task id.  
--- each id corresponds to an independent isolated environment.  
--- /data/local/tmp/$package_name$/env.id
-
 --functions
 dbgview(string);
 set_prop(string, string);
