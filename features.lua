@@ -67,6 +67,8 @@ setOverrideHandler(interface_class_name, methodname, beforeInvoke, afterInvoke);
 
 hookBroadcastReceiver(action, function(intent) end);
 
+proxyobj = proxyObject(before, after, obj, class, opt_constructorSignature, opt_constructorParam);
+
 --Other methods for accessing objects
 javaobj.fieldname; -- accessing object variables
 javaobj_class.fieldname; -- accessing class static variables
