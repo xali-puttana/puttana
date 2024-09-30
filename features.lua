@@ -59,15 +59,30 @@ hook(class_name, methodname, native_signature, beforeHookedMethod, afterHookedMe
 hook(method, beforeHookedMethod, afterHookedMethod);
 hook(class, methodname, native_signature, beforeHookedMethod, afterHookedMethod);
 
-function beforeInvoke(thiz, obj, method, args)
+function beforeInvoke(param)
 end
-function afterInvoke(thiz, obj, method, args, result)
+function afterInvoke(param)
 end
 setOverrideHandler(interface_class_name, methodname, beforeInvoke, afterInvoke);
 
-hookBroadcastReceiver(action, function(intent) end);
+hookBroadcastReceiver(action, function(intent)
+  --you can modify intent
+  end);
 
+function before(param)
+end
+function after(param)
+end
 proxyobj = proxyObject(before, after, obj, class, opt_constructorSignature, opt_constructorParam);
+
+--param
+--param.thisObject
+--param.args
+--param:getResult()
+--param:setResult(javaobj)
+--param:getThrowable()
+--param:hasThrowable()
+--param:setThrowable(throwable)
 
 --Other methods for accessing objects
 javaobj.fieldname; -- accessing object variables
