@@ -12,6 +12,11 @@ Lua array indices start from 1, while Java array indices start from 0;
 In Lua, the empty object is nil, while in Java, the empty object is null(reflect_nullObject). 
 In Java, to check if an object is null, you need to use reflect_checkObject|reflect_assertObject.  
 please be aware of whether the object you are currently working with is a Lua object or a Java object.
+
+Lua scripts are always executed within the engine's callbacks.  
+At the end of each execution, the engine will reclaim all non-global Java objects.  
+If subsequent callbacks need to rely on previous Java objects,  
+you must use the reflect_globalRef function to create global references.  
 ]]
 
 --global variable
@@ -56,6 +61,7 @@ classloader = reflect_myClassLoader();
 context = reflect_myContext();
 application = reflect_myApplication();
 classloader = reflect_loadDex(buffer, parent);
+boolean = reflect_loadSO(modname, buffer);
 reflect_checkObject(javaobj);
 reflect_assertObject(javaobj);
 
