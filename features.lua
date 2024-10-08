@@ -6,6 +6,14 @@ In env.lua, you can implement all your logic, such as printing key logs and modi
 We have extended Lua with the following support.
 ]]
 
+--[[
+Some points to note:  
+Lua array indices start from 1, while Java array indices start from 0;  
+In Lua, the empty object is nil, while in Java, the empty object is null(reflect_nullObject). 
+In Java, to check if an object is null, you need to use reflect_checkObject|reflect_assertObject.  
+please be aware of whether the object you are currently working with is a Lua object or a Java object.
+]]
+
 --global variable
 package_name 
 -- package_name is string. current package name. 
